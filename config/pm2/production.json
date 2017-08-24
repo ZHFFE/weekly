@@ -2,7 +2,7 @@
   "apps": [
     {
       "name": "weekly",
-      "cwd": "/data/bw/week",
+      "cwd": "/home/q/project/weekly",
       "script": "server/app.js",
       "exec_mode": "cluster",
       "node_args": "--harmony",
@@ -13,7 +13,7 @@
       "error_file": "/dev/null",
       "out_file": "/dev/null",
       "pid_file": "/dev/null",
-      "max_memory_restart": "800M",
+      "max_memory_restart": "400M",
       "instances": "max"
     }
   ]
