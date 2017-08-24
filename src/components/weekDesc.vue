@@ -17,14 +17,7 @@
 <script>
   export default {
     beforeMount(){
-      this.getWeeks()
-    },
-    watch: {
-      '$route': function (route) {
-        var query = route.query;
-        this.week = query.week;
-        this.year = query.year;
-      }
+      this.getWeeks();
     },
     data(){
       return {
@@ -47,7 +40,9 @@
       },
     methods: {
       getWeeks(){
-            this.$http.get('/week', {week: this.week, year: this.year}).then((res) => {
+            const query = this.$route.query;
+            console.log(query);
+            this.$http.get('/week', {params: {week: query.week, year: query.year}}).then((res) => {
             this.values = res.body.data;
                 console.log(this.values);
         })

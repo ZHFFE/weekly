@@ -8,6 +8,7 @@ exports.create = (req, config = {})=> {
 	    category: config.category,
         reason: config.reason,
 	    username: config.user,
+        year: config.year,
         weeks: config.week
     };
     let params = [];
@@ -34,7 +35,8 @@ exports.select  = (req, config = {})=> {
 	    category: config.category,
         reason: config.reason,
 	    username: config.user,
-        weeks: config.week
+        weeks: config.week,
+	    year: config.year
     };
     let params = [];
     let wheres = [];

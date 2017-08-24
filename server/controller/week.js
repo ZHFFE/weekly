@@ -9,6 +9,7 @@ router.use(auth);
 router.route('/')
 	.get((req, res) => {
 		const query = req.query;
+
 		reportModel.select(req, {
 			week: query.week,
 			year: query.year
