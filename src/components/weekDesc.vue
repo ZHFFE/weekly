@@ -6,10 +6,10 @@
     <div>
         <Card v-for="item in values">
             <p slot="title">
-                <a v-bind:href="item.url" target="_blank">{{item.title}}</a>|{{item.category | category}}
+                <a v-bind:href="item.url" target="_blank">{{item.title}}</a>
             </p>
             <p>
-                {{item.content}}
+                {{item.username}}:{{item.reason}}
             </p>
         </Card>
     </div>
