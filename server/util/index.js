@@ -814,15 +814,9 @@ exports.theWeek = function(_date) {
         days[1] = 28
     }
 
-    if (now.getMonth() == 0) {
-        totalDays = totalDays + now.getDate();
-    } else {
-        var curMonth = now.getMonth();
-        for (let count = 1; count <= curMonth; count++) {
-            totalDays = totalDays + days[count - 1];
-        }
-        totalDays = totalDays + now.getDate();
-    }
-    //得到第几周
-    return Math.round(totalDays / 7);
+    const fullYear = now.getFullYear();
+    const yearFirstDay = new Date(fullYear, 0, 1);
+    const timeDiff = Math.round((now - yearFirstDay)/86400000);
+
+    return Math.ceil((timeDiff + (yearFirstDay.getDay() + 1) - 1)/7)
 }
